@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* Remove background color and set text color for navbar links */
+
+.navbar {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the navbar */
+    height: 100px; /* Adjust height as needed */
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('C:/Users/RAVALIKA.LAPTOP-5H7Q92BG/Angular_18/Angular_18_Project/public/bg_image_1.jpg'); /* Adjust path as per your project structure */
+    background-size: cover; /* Ensures the image covers the entire navbar */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    background-position: center; /* Centers the image within the navbar */
+    opacity: 0.65; /* Set desired opacity */
+    z-index: -1; /* Place the overlay behind the content */
+}
+
+.navbar-content {
+    position: relative; /* Ensure the content is positioned above the pseudo-element */
+    z-index: 1;
+    color: white; /* Adjust text color for better visibility */
+    padding: 20px; /* Adjust padding as needed */
+}

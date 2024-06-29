@@ -1,0 +1,16 @@
+.btn.btn-primary {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6f4e37;
+    cursor: pointer; /* Indicate clickability */
+    text-decoration: none; /* Remove default anchor underline */
+  }
+  
+  .btn.btn-primary:hover {
+    text-decoration: underline; /* Underline on hover for feedback */
+  }
+  
