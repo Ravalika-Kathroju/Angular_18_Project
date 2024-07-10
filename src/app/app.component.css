@@ -1,0 +1,51 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-grow: 1;
+    justify-content: flex-start; /* Content will align at the top */
+    margin-top: 0; /* Adjust the value (e.g., 1em, 3em) for desired spacing */
+    background-color: #f8f9fa; /* Light background color for better contrast */
+  }
+
+  .hero img {  /* New styles for the image in the second .hero */
+    width: 100%;  /* Make image width match container width */
+    height: 100%; /* Make image height match container height */
+    object-fit: cover;  /* Resize image to cover container (may crop) */
+    
+    opacity: 0.5; /* This line controls the image opacity (0 - fully transparent, 1 - fully opaque) */
+  }
+  .hero h1 {
+    font-size: 6em;
+    margin: 0.5em 0;
+  }
+  .hero p {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+  .btn {
+    margin-top: 1em;
+  }
+  .btn.btn-primary {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #6f4e37;
+      cursor: pointer; /* Indicate clickability */
+      text-decoration: none; /* Remove default anchor underline */
+    }
+    
+    .btn.btn-primary:hover {
+      text-decoration: underline; /* Underline on hover for feedback */
+    }
+    

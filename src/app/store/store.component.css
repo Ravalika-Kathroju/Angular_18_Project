@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Changed background color to white */
+    margin: 0;
+    padding: 0;
+}
+
+.stores-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #6f4e37;
+}
+
+.store {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.store:last-child {
+    border-bottom: none;
+}
+
+.store h2 {
+    color: #6f4e37;
+    margin: 0 0 10px 0;
+}
+
+.store p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.store a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.store a:hover {
+    text-decoration: underline;
+}
+  

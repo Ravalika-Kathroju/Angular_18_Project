@@ -4,32 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Cup</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
-        .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            background-color: #f8f9fa; /* Light background color for better contrast */
-        }
-        .hero h1 {
-            font-size: 4em;
-            margin: 0.5em 0;
-        }
-        .hero p {
-            font-size: 1.5em;
-            margin: 0.5em 0;
-        }
-        .btn {
-            margin-top: 1em;
-        }
-    </style>
 </head>
 <body>
     <header class="hero">
@@ -37,5 +11,8 @@
         <p>Where Coffee meets creamery</p>
         <button class="btn btn-primary" [routerLink]="['/Menu-route']">Menu</button>
     </header>
+    <div class="hero-image-container">
+        <img src="bg_image_2.jpg" alt="Coffee Shop Image" class="hero-image"> 
+    </div>
 </body>
 </html>

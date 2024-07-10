@@ -1,0 +1,75 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #fff; /* Set background color to white */
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-grow: 1;
+  justify-content: flex-start; /* Align content at the top */
+  margin-top: 0; /* Adjust spacing if needed */
+}
+
+.hero-image-container {
+  /* New class for the image container */
+  background-color: black;
+  opacity: 0.5; /* Adjust opacity as desired (0 - transparent, 1 - opaque) */
+  position: relative; /* Establish layering context */
+  width: 100%; /* Make container fill width */
+  height: 100vh; /* Make container fill viewport height */
+}
+
+.hero-image {
+  /* Existing styles for the image */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; /* Position image absolutely within container */
+  top: 0;
+  left: 0;
+}
+
+.hero img {  
+  /* New styles for the image in the second .hero */
+  width: 100%;  /* Make image width match container width */
+  height: 100%; /* Make image height match container height */
+  object-fit: cover;  /* Resize image to cover container (may crop) */
+  opacity: 0.5; /* This line controls the image opacity (0 - fully transparent, 1 - fully opaque) */
+}
+
+.hero h1 {
+  font-size: 6em;
+  margin: 0.5em 0;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.btn {
+  margin-top: 1em;
+}
+
+.btn.btn-primary {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6f4e37;
+    cursor: pointer; /* Indicate clickability */
+    text-decoration: none; /* Remove default anchor underline */
+}
+
+.btn.btn-primary:hover {
+    text-decoration: underline; /* Underline on hover for feedback */
+}
+ 
+  
