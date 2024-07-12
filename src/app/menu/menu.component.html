@@ -1,111 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Menu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-        }
-        .menu {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .menu h1 {
-            text-align: center;
-            color: #6f4e37;
-        }
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        .menu-item:last-child {
-            border-bottom: none;
-        }
-        .menu-item h2 {
-            margin: 0;
-            font-size: 1.2em;
-        }
-        .menu-item p {
-            margin: 0;
-            color: #666;
-        }
-        .price {
-            font-size: 1.2em;
-            color: #6f4e37;
-        }
-    </style>
 </head>
 <body>
     <div class="menu">
         <h1>Coffee Menu</h1>
-        <div class="menu-item">
+        <div class="menu-item" *ngFor="let product of products">
             <div>
-              <a href="#" class="btn btn-primary">Espresso</a>
-              <p>Rich and bold espresso shot</p>
+                <a [routerLink]="['/product', product.id]" class="btn btn-primary">{{ product.name }}</a>
+                <p>{{ product.description }}</p>
             </div>
-            <div class="price">Rs.150</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <a href="#" class="btn btn-primary">Americano</a>
-              <p>Espresso with hot water</p>
-            </div>
-            <div class="price">Rs.180</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <a href="#" class="btn btn-primary">Cappuccino</a>
-              <p>Espresso with steamed milk and foam</p>
-            </div>
-            <div class="price">Rs.200</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <a href="#" class="btn btn-primary">Latte</a>
-              <p>Espresso with steamed milk</p>
-            </div>
-            <div class="price">Rs.220</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <a href="#" class="btn btn-primary">Mocha</a>
-              <p>Espresso with chocolate and steamed milk</p>
-            </div>
-            <div class="price">Rs.250</div>
-          </div>
-          <div class="menu-item">
-            <div>
-                <a href="#" class="btn btn-primary">Macchiato</a>
-                <p>Espresso with a dollop of steamed milk</p>
-            </div>
-            <div class="price">Rs.250</div>
+            <div class="price">Rs. {{ product.price }}</div>
+            <button class="add-to-cart-btn" (click)="addToCart(product)">Add to Cart</button>
         </div>
-        <div class="menu-item">
-            <div>
-                <a href="#" class="btn btn-primary">Flat White</a>
-                <p>Espresso with microfoam</p>
-            </div>
-            <div class="price">Rs.250</div>
-        </div>
-        <div class="menu-item">
-            <div>
-                <a href="#" class="btn btn-primary">Affogato</a>
-                <p>Espresso poured over vanilla ice cream</p>
-            </div>
-            <div class="price">Rs.300</div>
+        <div class="cart-link">
+            <a [routerLink]="['/cart']">Go to Cart</a>
         </div>
     </div>
 </body>
 </html>
+

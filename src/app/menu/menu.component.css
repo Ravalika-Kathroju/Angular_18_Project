@@ -13,4 +13,70 @@
   .btn.btn-primary:hover {
     text-decoration: underline; /* Underline on hover for feedback */
   }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+.menu {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.menu h1 {
+    text-align: center;
+    color: #6f4e37;
+}
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.menu-item:last-child {
+    border-bottom: none;
+}
+.menu-item h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+.menu-item p {
+    margin: 0;
+    color: #666;
+}
+.price {
+    font-size: 1.2em;
+    color: #6f4e37;
+}
+/* Styles for cart link */
+.cart-link {
+    margin-top: 20px;
+    text-align: right;
+  }
+  .cart-link a {
+    color: #6f4e37;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  .cart-link a:hover {
+    text-decoration: underline;
+  }
+  /* Add to Cart Button Styles */
+  .add-to-cart-btn {
+    background: none;
+    border: 1px solid #6f4e37;
+    color: #6f4e37;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+  }
   
+  .add-to-cart-btn:hover {
+    background: #6f4e37;
+    color: white;
+  }

@@ -1,0 +1,9 @@
+<div class="product-details" *ngIf="product">
+  <h2>{{ product.name }}</h2>
+  <img [src]="product.image" alt="{{ product.name }}">
+  <p>{{ product.description }}</p>
+  <p>Price: Rs. {{ product.price }}</p>
+  <button (click)="addToCart()">Add to Cart</button>
+</div>
+
+  
