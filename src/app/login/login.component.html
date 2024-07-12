@@ -1,0 +1,10 @@
+<form class="auth-form" (submit)="login()">
+  <label>Email</label>
+  <input type="email" name="email" [(ngModel)]="credentials.email" required>
+  
+  <label>Password</label>
+  <input type="password" name="password" [(ngModel)]="credentials.password" required>
+  
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+

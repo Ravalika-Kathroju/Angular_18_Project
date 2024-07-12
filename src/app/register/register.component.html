@@ -1,0 +1,13 @@
+<form class="auth-form" (submit)="register()">
+  <label>Username</label>
+  <input type="text" name="username" [(ngModel)]="user.username" required>
+  
+  <label>Email</label>
+  <input type="email" name="email" [(ngModel)]="user.email" required>
+  
+  <label>Password</label>
+  <input type="password" name="password" [(ngModel)]="user.password" required>
+  
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+
