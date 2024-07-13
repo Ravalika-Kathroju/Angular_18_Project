@@ -1,37 +1,45 @@
 .auth-form {
-    max-width: 400px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .auth-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .auth-form input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .auth-form button {
-    background: none;
-    border: 1px solid #6f4e37;
-    color: #6f4e37;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 4px;
-  }
-  
-  .auth-form button:hover {
-    background: #6f4e37;
-    color: white;
-  }
-  
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.auth-form button {
+  background: none;
+  border: 1px solid #6f4e37;
+  color: #6f4e37;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+}
+
+.auth-form button:hover {
+  background: #6f4e37;
+  color: white;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+.success-message {
+  color: green;
+  margin-top: 10px;
+}
