@@ -6,7 +6,7 @@ const mongoose = require('mongoose'); // Import mongoose
 require('dotenv').config(); // Import dotenv for environment variables
 
 const app = express();
-const port = 4000;
+const port = 3000;
 
 app.use(express.json()); // for parsing application/json
 app.use(cors()); // Use cors middleware to allow cross-origin requests
