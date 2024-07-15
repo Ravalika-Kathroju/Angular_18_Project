@@ -2,12 +2,23 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors'); // Import cors middleware
+const mongoose = require('mongoose'); // Import mongoose
+require('dotenv').config(); // Import dotenv for environment variables
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 app.use(express.json()); // for parsing application/json
 app.use(cors()); // Use cors middleware to allow cross-origin requests
+
+// Connect to MongoDB (local instance)
+mongoose.connect('mongodb://localhost:27017/yourDatabaseName', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected...'))
+  .catch(err => console.log(err));
+
+// Import userRoutes
+const userRoutes = require('./routes/userRoutes');
+app.use('/api/users', userRoutes);
 
 // Mock user database (replace with actual database integration)
 const users = [];
@@ -15,7 +26,7 @@ const users = [];
 // Register route
 app.post('/api/users/register', async (req, res) => {
   const { email, password } = req.body;
-  
+
   if (!email || !password) {
     return res.status(400).json({ message: 'Email and password are required' });
   }
@@ -61,3 +72,5 @@ app.post('/api/users/login', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+

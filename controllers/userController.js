@@ -1,8 +1,9 @@
-// Dummy user data (in a real application, use a database)
-const users = [];
+const User = require('../models/User');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 // Register a new user
-exports.register = (req, res) => {
+exports.register = async (req, res) => {
   const { email, password } = req.body;
 
   // Basic validation
@@ -10,33 +11,52 @@ exports.register = (req, res) => {
     return res.status(400).json({ message: 'Email and password are required' });
   }
 
-  // Check if user already exists
-  const userExists = users.find(user => user.email === email);
-  if (userExists) {
-    return res.status(400).json({ message: 'User already exists' });
+  try {
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create new user
+    const newUser = new User({ email, password: hashedPassword });
+    await newUser.save();
+
+    res.status(201).json({ message: 'User registered successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
   }
-
-  // Create new user
-  const newUser = { email, password };
-  users.push(newUser);
-
-  res.status(201).json({ message: 'User registered successfully' });
 };
 
 // User login
-exports.login = (req, res) => {
+exports.login = async (req, res) => {
   const { email, password } = req.body;
 
-  // Basic validation
   if (!email || !password) {
     return res.status(400).json({ message: 'Email and password are required' });
   }
 
-  // Find user
-  const user = users.find(user => user.email === email && user.password === password);
-  if (!user) {
-    return res.status(401).json({ message: 'Invalid credentials' });
-  }
+  try {
+    // Find user
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
 
-  res.status(200).json({ message: 'Login successful' });
+    // Compare passwords
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
+
+    // Generate JWT token
+    const token = jwt.sign({ email: user.email }, 'your_secret_key', { expiresIn: '1h' });
+
+    res.status(200).json({ message: 'Login successful', token });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
 };
